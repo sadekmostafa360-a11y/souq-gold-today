@@ -1,0 +1,21 @@
+{
+  "id": "/souq-gold-today/",
+  "name": "سوق الذهب اليوم",
+  "short_name": "سوق الذهب",
+  "description": "أسعار الذهب في مصر وحاسبة الشراء مع مصطفى صادق",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/souq-gold-today/",
+  "scope": "/souq-gold-today/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#b8860b",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
