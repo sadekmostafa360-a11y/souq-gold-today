@@ -68,4 +68,49 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("service-worker.js");
   });
 }
+</script>
+<section style="margin:20px auto;padding:16px;max-width:600px;border:1px solid #d4af37;border-radius:12px;background:#fffaf0;text-align:right;direction:rtl;font-family:Arial,sans-serif;line-height:1.9">
+  <h3 style="margin-top:0;color:#8b6914">📲 ثبّت سوق الذهب اليوم على موبايلك</h3>
+  <p>أضف التطبيق إلى الشاشة الرئيسية للوصول السريع إلى أسعار الذهب وحاسبة الشراء.</p>
+
+  <button id="installGoldApp" style="display:none;padding:10px 16px;background:#b8860b;color:white;border:0;border-radius:8px;font-size:16px">
+    تثبيت التطبيق على أندرويد
+  </button>
+
+  <div style="margin-top:12px">
+    <strong>🤖 أندرويد:</strong>
+    <ol>
+      <li>افتح الرابط باستخدام متصفح Google Chrome.</li>
+      <li>اضغط على قائمة الثلاث نقاط ⋮.</li>
+      <li>اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».</li>
+      <li>اضغط «تثبيت» أو «إضافة» للتأكيد.</li>
+    </ol>
+
+    <strong>🍎 آيفون:</strong>
+    <ol>
+      <li>افتح الرابط في متصفح Safari.</li>
+      <li>اضغط زر المشاركة.</li>
+      <li>اختر «إضافة إلى الشاشة الرئيسية».</li>
+      <li>اضغط «إضافة».</li>
+    </ol>
+  </div>
+</section>
+
+<script>
+let goldInstallPrompt;
+
+window.addEventListener("beforeinstallprompt", function(event) {
+  event.preventDefault();
+  goldInstallPrompt = event;
+  const button = document.getElementById("installGoldApp");
+  button.style.display = "inline-block";
+});
+
+document.getElementById("installGoldApp").addEventListener("click", async function() {
+  if (!goldInstallPrompt) return;
+  goldInstallPrompt.prompt();
+  await goldInstallPrompt.userChoice;
+  goldInstallPrompt = null;
+  this.style.display = "none";
+});
 </script></body></body></html>
